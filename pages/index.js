@@ -474,7 +474,7 @@ const Home = () => {
 				<div className="container">
 					<div className="header">
 						<div className="header-title">
-							<h1>Project3Product</h1>
+							<h1>Project2Product</h1>
 						</div>
 						<div className="header-subtitle">
 							<h2>
