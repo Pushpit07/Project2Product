@@ -3,7 +3,7 @@
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&display=swap');
 
-body {
+body, * {
     margin: 0;
     padding: 0;
     font-family: 'Manrope', sans-serif;
@@ -36,11 +36,11 @@ body {
     flex-flow: column nowrap;
     gap: 10px;
     height: fit-content;
-    max-width: 975px;
+    /* max-width: 975px; */
     overflow: auto;
     padding: 50px;
     position: relative;
-    width: auto;
+    /* width: auto; */
     gap: 64px;
 }
 
@@ -85,7 +85,7 @@ body {
     gap: 16px;
     height: min-content;
     padding: 0px;
-    width: min-content;
+    /* width: min-content; */
 }
 
 .prompt-box {
@@ -108,7 +108,7 @@ body {
     padding: 20px;
     position: relative;
     width: 610px;
-    max-width: 1200px;
+    /* max-width: 1200px; */
     will-change: transform;
     overflow: auto;
     outline: none;
@@ -143,7 +143,7 @@ body {
     padding: 20px;
     position: relative;
     width: 610px;
-    max-width: 1200px;
+    /* max-width: 1200px; */
     will-change: transform;
     overflow: auto;
     outline: none;
@@ -362,7 +362,7 @@ textarea {
     flex-flow: column nowrap;
     gap: 10px;
     height: min-content;
-    max-width: 1200px;
+    /* max-width: 1200px; */
     overflow: hidden;
     position: relative;
     width: 100%;

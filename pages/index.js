@@ -8,6 +8,7 @@ import { UserContext } from '../lib/UserContext';
 import Loading from '../components/loading';
 
 import { GoogleSpreadsheet } from 'google-spreadsheet';
+import PromptCard from '../components/PromptCard';
 
 
 const Home = () => {
@@ -492,45 +493,66 @@ const Home = () => {
               <button type="button" className="botn first" onClick={(_ev) => runDemo(apiOutput)}>
 								Download PitchDeck <br />
 							</button>
-
-              <button 
+              <div className=' w-full grid grid-cols-3 place-items-center gap-y-6 gap-x-20'>
+              <PromptCard
+                handleCardClick={callGenerateVCPitchEndpoint}
+                cardInfo='Generate Pitch to VC'
+                isLoading={isGeneratingVCPitch}
+              />
+              <PromptCard
+                handleCardClick={callGenerateMomTestEndpoint}
+                cardInfo='Generate Pitch for Mom Test'
+                isLoading={isGeneratingMomTestPitch}
+              />
+              <PromptCard
+                handleCardClick={callGenerateCoFounderPitchEndpoint}
+                cardInfo='Generate Pitch to Potential Co-Founder'
+                isLoading={isGeneratingCoFounderPitch}
+              />
+              <PromptCard
+                handleCardClick={callGenerateMarketingAdvisorEndpoint}
+                cardInfo='Generate Pitch to Potential Advisor (Marketing)'
+                isLoading={isGeneratingMarketingAdvisorPitch}
+              />
+              </div>
+              {/* <button 
               type="button" 
               className={isGeneratingVCPitch ? 'botn first loading' : 'botn first'} 
               onClick={callGenerateVCPitchEndpoint}>	
                 <div className="">
                   {isGeneratingVCPitch ? <span className="loader"></span> : <p>Generate Pitch to VC</p>}
                 </div>
-							</button>
+							</button> */}
 
-              <button 
+              {/* <button 
               type="button" 
               className={isGeneratingMomTestPitch ? 'botn first loading' : 'botn first'} 
               onClick={callGenerateMomTestEndpoint}>	
                 <div className="">
                   {isGeneratingMomTestPitch ? <span className="loader"></span> : <p>Generate Pitch for Mom Test</p>}
                 </div>
-							</button>
+							</button> */}
 
-              <button 
+              {/* <button 
               type="button" 
               className={isGeneratingCoFounderPitch ? 'botn first loading' : 'botn first'} 
               onClick={callGenerateCoFounderPitchEndpoint}>	
                 <div className="">
                   {isGeneratingCoFounderPitch ? <span className="loader"></span> : <p>Generate Pitch to Potential Co-Founder</p>}
                 </div>
-							</button>
+							</button> */}
 
-              <button 
+              {/* <button 
               type="button" 
               className={isGeneratingMarketingAdvisorPitch ? 'botn first loading' : 'botn first'} 
               onClick={callGenerateMarketingAdvisorEndpoint}>	
                 <div className="">
                   {isGeneratingMarketingAdvisorPitch ? <span className="loader"></span> : <p>Generate Pitch to Potential Advisor (Marketing)</p>}
                 </div>
-							</button>
+							</button> */}
             </div>
             )}
-
+            {/* <PromptCard/> */}
           </div>
         
         </div>

@@ -5,6 +5,9 @@ const nextConfig = {
 
 // module.exports = nextConfig
 module.exports = {
+  images: {
+    domains: ['lexica.art'],
+  },
   webpack: (config, { isServer }) => {
     if (!isServer) {
       config.resolve.fallback.fs = false;
