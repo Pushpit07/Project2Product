@@ -413,6 +413,20 @@ textarea {
 	color: rgba(255, 255, 255, 0.5);
 }
 
+.output-content-btns {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 10px 0px 40px 0px;
+}
+
+.ipfs-url {
+	margin: -20px 0px 50px 0px;
+	color: #fff;
+	text-align: center;
+	text-decoration: underline;
+}
+
 @media (min-width: 810px) and (max-width: 1199px) {
 	.container {
 		max-width: 600px;
