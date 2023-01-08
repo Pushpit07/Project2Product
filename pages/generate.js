@@ -29,6 +29,15 @@ const Home = () => {
 	const [isGeneratingMomTestPitch, setIsGeneratingMomTestPitch] = useState(false);
 	const [isGeneratingMarketingAdvisorPitch, setIsGeneratingMarketingAdvisorPitch] = useState(false);
 
+	const [isGeneratingUserPersona, setIsGeneratingUserPersona] = useState(false);
+	const [isGeneratingPotentialCustomers, setIsGeneratingPotentialCustomers] = useState(false);
+	const [isGeneratingLeanStartup, setIsGeneratingLeanStartup] = useState(false);
+	const [isGeneratingSPME, setIsGeneratingSPME] = useState(false);
+	const [isGeneratingMVP, setIsGeneratingMVP] = useState(false);
+	const [isGeneratingGrant, setIsGeneratingGrant] = useState(false);
+	const [isGeneratingTwitter, setIsGeneratingTwitter] = useState(false);
+	const [isGeneratingInstagram, setIsGeneratingInstagram] = useState(false);
+
 	const [email, setEmail] = useState("");
 
 	// Config variables
@@ -236,6 +245,53 @@ const Home = () => {
 		setMarketingAdvisorApiOutput([...marketingAdvisorOutputArray]);
 		setIsGeneratingMarketingAdvisorPitch(false);
 	};
+	const callGenerateUserPersonaEndpoint = async () => {
+		setIsGeneratingUserPersona(true);
+		console.log("Doing Magic Again...");
+		const response = await fetch('/api/userpersona', {
+		  method: 'POST',
+		  headers: {
+			'Content-Type': 'application/json',
+		  },
+		  body: JSON.stringify({ userInput }),
+		});
+		const data = await response.json();
+		const { output } = data;
+		let userPersonaOutputArray = output.text;
+	
+		// Downloading a text file
+		var a = window.document.createElement('a');
+		a.href = window.URL.createObjectURL(new Blob([userPersonaOutputArray], {type: 'text/plain'}));
+		a.download = 'UserPersona.txt';
+		document.body.appendChild(a);
+		a.click();
+		document.body.removeChild(a);
+		setIsGeneratingUserPersona(false);
+	  }
+	  const callGeneratePotentialCustomerEndpoint = async () => {
+		setIsGeneratingPotentialCustomers(true);
+		console.log("Doing Magic Again...");
+		const response = await fetch('/api/potentialcustomer', {
+		  method: 'POST',
+		  headers: {
+			'Content-Type': 'application/json',
+		  },
+		  body: JSON.stringify({ userInput }),
+		});
+		const data = await response.json();
+		const { output } = data;
+		let userCusOutputArray = output.text;
+	
+		// Downloading a text file
+		var a = window.document.createElement('a');
+		a.href = window.URL.createObjectURL(new Blob([userCusOutputArray], {type: 'text/plain'}));
+		a.download = 'PotentialCustomer.txt';
+		document.body.appendChild(a);
+		a.click();
+		document.body.removeChild(a);
+		setIsGeneratingPotentialCustomers(false);
+	  }
+	
 
 	const onUserChangedProductName = (event) => {
 		setProductName(event.target.value);
@@ -571,16 +627,17 @@ const Home = () => {
 									)}
 
 									<div className=" w-full grid grid-cols-3 place-items-center gap-y-6 gap-x-20">
+									<PromptCard
+											handleCardClick={callGenerateMomTestEndpoint}
+											cardInfo="Mom Test: How to talk to initial customers"
+											isLoading={isGeneratingMomTestPitch}
+										/>
 										<PromptCard
 											handleCardClick={callGenerateVCPitchEndpoint}
 											cardInfo="Generate Pitch to VC"
 											isLoading={isGeneratingVCPitch}
 										/>
-										<PromptCard
-											handleCardClick={callGenerateMomTestEndpoint}
-											cardInfo="Generate Pitch for Mom Test"
-											isLoading={isGeneratingMomTestPitch}
-										/>
+										
 										<PromptCard
 											handleCardClick={callGenerateCoFounderPitchEndpoint}
 											cardInfo="Generate Pitch to Potential Co-Founder"
