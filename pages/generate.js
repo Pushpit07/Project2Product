@@ -771,26 +771,66 @@ const Home = () => {
 									)}
 
 									<div className=" w-full grid grid-cols-3 place-items-center gap-y-6 gap-x-20">
-									<PromptCard
+										<PromptCard
 											handleCardClick={callGenerateMomTestEndpoint}
 											cardInfo="Mom Test: How to talk to initial customers"
 											isLoading={isGeneratingMomTestPitch}
 										/>
 										<PromptCard
 											handleCardClick={callGenerateVCPitchEndpoint}
-											cardInfo="Generate Pitch to VC"
+											cardInfo="Email Pitch to VC"
 											isLoading={isGeneratingVCPitch}
+										/>
+										<PromptCard
+											handleCardClick={callGenerateUserPersonaEndpoint}
+											cardInfo="User Persona"
+											isLoading={isGeneratingUserPersona}
+										/>
+										<PromptCard
+											handleCardClick={callGeneratePotentialCustomerEndpoint}
+											cardInfo="Type of Potential Customers"
+											isLoading={isGeneratingPotentialCustomers}
+										/>
+										<PromptCard
+											handleCardClick={callLeanStartupEndpoint}
+											cardInfo="Advice from the book: The Lean Startup"
+											isLoading={isGeneratingLeanStartup}
+										/>
+										<PromptCard
+											handleCardClick={callSPMEEndpoint}
+											cardInfo="SPME (Strategy, Positioning, Messaging, Experimentations): Marketing for solopreneurs"
+											isLoading={isGeneratingSPME}
+										/>
+										<PromptCard
+											handleCardClick={callMVPEndpoint}
+											cardInfo="MVP Launch Checklist"
+											isLoading={isGeneratingMVP}
+										/>
+										<PromptCard
+											handleCardClick={callGrantEndpoint}
+											cardInfo="Grant Proposal"
+											isLoading={isGeneratingGrant}
 										/>
 										
 										<PromptCard
 											handleCardClick={callGenerateCoFounderPitchEndpoint}
-											cardInfo="Generate Pitch to Potential Co-Founder"
+											cardInfo="Pitch to Onboard Potential Co-Founder"
 											isLoading={isGeneratingCoFounderPitch}
 										/>
 										<PromptCard
 											handleCardClick={callGenerateMarketingAdvisorEndpoint}
-											cardInfo="Generate Pitch to Potential Advisor (Marketing)"
+											cardInfo="Pitch to Onboard Potential Advisor (Marketing)"
 											isLoading={isGeneratingMarketingAdvisorPitch}
+										/>
+										<PromptCard
+											handleCardClick={callTwitterEndpoint}
+											cardInfo="Initial Twitter Strategy"
+											isLoading={isGeneratingTwitter}
+										/>
+										<PromptCard
+											handleCardClick={callInstagramEndpoint}
+											cardInfo="Initial Instagram Strategy"
+											isLoading={isGeneratingInstagram}
 										/>
 									</div>
 									{/* <button 

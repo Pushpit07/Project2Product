@@ -5,7 +5,7 @@ export default function HomePage() {
 	return (
 		<div className="w-screen h-screen flex flex-col relative items-center justify-center">
 			<div className="absolute w-full h-full">
-				<Image src={"/homebg.jpeg"} alt="bg env" priority fill style={{ objectFit: "cover" }}></Image>
+				<Image src={"/bg-4.jpg"} alt="bg env" priority fill style={{ objectFit: "cover" }}></Image>
 			</div>
 			<div className="z-10 flex flex-col items-center justify-center space-y-7 w-full h-full backdrop-blur-[2px] backdrop-brightness-75">
 				<h1 className="font-primary tracking-wide font-semibold text-6xl text-white">Project2Product</h1>
