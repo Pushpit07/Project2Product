@@ -29,6 +29,16 @@ const Home = () => {
   const [isGeneratingMomTestPitch, setIsGeneratingMomTestPitch] = useState(false);
   const [isGeneratingMarketingAdvisorPitch, setIsGeneratingMarketingAdvisorPitch] = useState(false);
 
+  const [isGeneratingUserPersona, setIsGeneratingUserPersona] = useState(false);
+  const [isGeneratingPotentialCustomers, setIsGeneratingPotentialCustomers] = useState(false);
+  const [isGeneratingLeanStartup, setIsGeneratingLeanStartup] = useState(false);
+  const [isGeneratingSPME, setIsGeneratingSPME] = useState(false);
+  const [isGeneratingMVP, setIsGeneratingMVP] = useState(false);
+  const [isGeneratingGrant, setIsGeneratingGrant] = useState(false);
+  const [isGeneratingTwitter, setIsGeneratingTwitter] = useState(false);
+  const [isGeneratingInstagram, setIsGeneratingInstagram] = useState(false);
+
+
 
   const [email, setEmail] = useState('');
 
@@ -95,12 +105,10 @@ const Home = () => {
     };
     appendSpreadsheet(newRow);
   }
-
+  // Getting VC Pitch Content from OpenAI
   const callGenerateVCPitchEndpoint = async () => {
     setIsGeneratingVCPitch(true);
     console.log("Doing Magic Again...");
-
-    // Getting VC Pitch Content from OpenAI
     const response = await fetch('/api/vcpitch', {
       method: 'POST',
       headers: {
@@ -108,11 +116,8 @@ const Home = () => {
       },
       body: JSON.stringify({ userInput }),
     });
-    // console.log("Response", response)
     const data = await response.json();
     const { output } = data;
-    // console.log("API VC OUTPUT:", output);
-    // let vcOutputArray = output.text.split(/\r?\n/);
     let vcOutputArray = output.text;
 
 
@@ -128,11 +133,11 @@ const Home = () => {
     setIsGeneratingVCPitch(false);
   }
 
+  // Getting Mom Test Content from OpenAI
   const callGenerateMomTestEndpoint = async () => {
     setIsGeneratingMomTestPitch(true);
     console.log("Doing Magic Again...");
 
-    // Getting Mom Test Content from OpenAI
     const response = await fetch('/api/momtest', {
       method: 'POST',
       headers: {
@@ -140,11 +145,8 @@ const Home = () => {
       },
       body: JSON.stringify({ userInput }),
     });
-    // console.log("Response", response)
     const data = await response.json();
     const { output } = data;
-    // console.log("API VC OUTPUT:", output);
-    // let vcOutputArray = output.text.split(/\r?\n/);
     let momTestOutputArray = output.text;
 
 
@@ -223,6 +225,32 @@ const Home = () => {
     setMarketingAdvisorApiOutput([...marketingAdvisorOutputArray]);
     setIsGeneratingMarketingAdvisorPitch(false);
   }
+
+  // Getting Pitch for User Persona
+  const callGenerateUserPersonaEndpoint = async () => {
+    setIsGeneratingUserPersona(true);
+    console.log("Doing Magic Again...");
+    const response = await fetch('/api/userpersona', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ userInput }),
+    });
+    const data = await response.json();
+    const { output } = data;
+    let userPersonaOutputArray = output.text;
+
+    // Downloading a text file
+    var a = window.document.createElement('a');
+    a.href = window.URL.createObjectURL(new Blob([userPersonaOutputArray], {type: 'text/plain'}));
+    a.download = 'UserPersona.txt';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setIsGeneratingUserPersona(false);
+  }
+
 
 
   const onUserChangedProductName = (event) => {
@@ -493,17 +521,23 @@ const Home = () => {
               <button type="button" className="botn first" onClick={(_ev) => runDemo(apiOutput)}>
 								Download PitchDeck <br />
 							</button>
+              
               <div className=' w-full grid grid-cols-3 place-items-center gap-y-6 gap-x-20'>
               <PromptCard
-                handleCardClick={callGenerateVCPitchEndpoint}
-                cardInfo='Generate Pitch to VC'
-                isLoading={isGeneratingVCPitch}
-              />
-              <PromptCard
                 handleCardClick={callGenerateMomTestEndpoint}
-                cardInfo='Generate Pitch for Mom Test'
+                cardInfo='Mom Test: How to talk to your initial customers'
                 isLoading={isGeneratingMomTestPitch}
               />
+              <PromptCard
+                handleCardClick={callGenerateVCPitchEndpoint}
+                cardInfo='Generate Email Pitch to VC'
+                isLoading={isGeneratingVCPitch}
+              />     
+              <PromptCard
+                handleCardClick={callGenerateUserPersonaEndpoint}
+                cardInfo='Generate User Persona'
+                isLoading={isGeneratingUserPersona}
+              /> 
               <PromptCard
                 handleCardClick={callGenerateCoFounderPitchEndpoint}
                 cardInfo='Generate Pitch to Potential Co-Founder'
