@@ -470,13 +470,13 @@ const Home = () => {
 		// // -----------------------------------------------------------------------------------
 
 		let slide1 = pptx.addSlide();
-		slide1.background = { data: redBG };
+		// slide1.background = { data: redBG };
 		slide1.addText([{ text: apiOutput[1], options: { fontSize: 16, breakLine: true } }], {
 			x: 0.7,
 			y: 2.2,
 			w: 8.5,
 			h: 2.5,
-			color: "FFFFFF",
+			color: "000000",
 			valign: "middle",
 			align: "center",
 			isTextBox: true,
@@ -487,13 +487,13 @@ const Home = () => {
 		// -----------------------------------------------------------------------------------
 
 		let slide2 = pptx.addSlide();
-		slide2.background = { data: redBG };
+		// slide2.background = { data: redBG };
 		slide2.addText([{ text: apiOutput[3], options: { fontSize: 16, breakLine: true } }], {
 			x: 0.7,
 			y: 2.2,
 			w: 8.5,
 			h: 2.5,
-			color: "FFFFFF",
+			color: "000000",
 			valign: "middle",
 			align: "center",
 			isTextBox: true,
@@ -504,13 +504,13 @@ const Home = () => {
 		// -----------------------------------------------------------------------------------
 
 		let slide3 = pptx.addSlide();
-		slide3.background = { data: redBG };
+		// slide3.background = { data: redBG };
 		slide3.addText([{ text: apiOutput[5], options: { fontSize: 16, breakLine: true } }], {
 			x: 0.7,
 			y: 2.2,
 			w: 8.5,
 			h: 2.5,
-			color: "FFFFFF",
+			color: "000000",
 			valign: "middle",
 			align: "center",
 			isTextBox: true,
@@ -521,14 +521,14 @@ const Home = () => {
 		// -----------------------------------------------------------------------------------
 
 		let slide4 = pptx.addSlide();
-		slide4.background = { data: redBG };
+		// slide4.background = { data: redBG };
 
 		slide4.addText([{ text: apiOutput[7], options: { fontSize: 16, breakLine: true } }], {
 			x: 0.7,
 			y: 2.2,
 			w: 8.5,
 			h: 2.5,
-			color: "FFFFFF",
+			color: "000000",
 			valign: "middle",
 			align: "center",
 			isTextBox: true,
@@ -539,14 +539,14 @@ const Home = () => {
 		// -----------------------------------------------------------------------------------
 
 		let slide5 = pptx.addSlide();
-		slide5.background = { data: redBG };
+		// slide5.background = { data: redBG };
 
 		slide5.addText([{ text: apiOutput[9], options: { fontSize: 16, breakLine: true } }], {
 			x: 0.7,
 			y: 2.2,
 			w: 8.5,
 			h: 2.5,
-			color: "FFFFFF",
+			color: "000000",
 			valign: "middle",
 			align: "center",
 			isTextBox: true,
@@ -557,14 +557,14 @@ const Home = () => {
 		// -----------------------------------------------------------------------------------
 
 		let slide6 = pptx.addSlide();
-		slide6.background = { data: redBG };
+		// slide6.background = { data: redBG };
 
 		slide6.addText([{ text: apiOutput[11], options: { fontSize: 16, breakLine: true } }], {
 			x: 0.7,
 			y: 2.2,
 			w: 8.5,
 			h: 2.5,
-			color: "FFFFFF",
+			color: "000000",
 			valign: "middle",
 			align: "center",
 			isTextBox: true,
@@ -575,14 +575,14 @@ const Home = () => {
 		// -----------------------------------------------------------------------------------
 
 		let slide7 = pptx.addSlide();
-		slide7.background = { data: redBG };
+		// slide7.background = { data: redBG };
 
 		slide7.addText([{ text: apiOutput[13], options: { fontSize: 16, breakLine: true } }], {
 			x: 0.7,
 			y: 2.2,
 			w: 8.5,
 			h: 2.5,
-			color: "FFFFFF",
+			color: "000000",
 			valign: "middle",
 			align: "center",
 			isTextBox: true,
@@ -593,14 +593,14 @@ const Home = () => {
 		// -----------------------------------------------------------------------------------
 
 		let slide8 = pptx.addSlide();
-		slide8.background = { data: redBG };
+		// slide8.background = { data: redBG };
 
 		slide8.addText([{ text: apiOutput[15], options: { fontSize: 16, breakLine: true } }], {
 			x: 0.7,
 			y: 2.2,
 			w: 8.5,
 			h: 2.5,
-			color: "FFFFFF",
+			color: "000000",
 			valign: "middle",
 			align: "center",
 			isTextBox: true,
@@ -611,14 +611,14 @@ const Home = () => {
 		// -----------------------------------------------------------------------------------
 
 		let slide9 = pptx.addSlide();
-		slide9.background = { data: redBG };
+		// slide9.background = { data: redBG };
 
 		slide9.addText([{ text: apiOutput[17], options: { fontSize: 16, breakLine: true } }], {
 			x: 0.7,
 			y: 2.2,
 			w: 8.5,
 			h: 2.5,
-			color: "FFFFFF",
+			color: "000000",
 			valign: "middle",
 			align: "center",
 			isTextBox: true,
@@ -629,14 +629,14 @@ const Home = () => {
 		// -----------------------------------------------------------------------------------
 
 		let slide10 = pptx.addSlide();
-		slide10.background = { data: redBG };
+		// slide10.background = { data: redBG };
 
 		slide10.addText([{ text: apiOutput[19], options: { fontSize: 16, breakLine: true } }], {
 			x: 0.7,
 			y: 2.2,
 			w: 8.5,
 			h: 2.5,
-			color: "FFFFFF",
+			color: "000000",
 			valign: "middle",
 			align: "center",
 			isTextBox: true,
@@ -647,14 +647,14 @@ const Home = () => {
 		// -----------------------------------------------------------------------------------
 
 		let slide11 = pptx.addSlide();
-		slide11.background = { data: redBG };
+		// slide11.background = { data: redBG };
 
 		slide11.addText([{ text: apiOutput[21], options: { fontSize: 16, breakLine: true } }], {
 			x: 0.7,
 			y: 2.2,
 			w: 8.5,
 			h: 2.5,
-			color: "FFFFFF",
+			color: "000000",
 			valign: "middle",
 			align: "center",
 			isTextBox: true,
@@ -665,14 +665,14 @@ const Home = () => {
 		// -----------------------------------------------------------------------------------
 
 		let slide12 = pptx.addSlide();
-		slide12.background = { data: redBG };
+		// slide12.background = { data: redBG };
 
 		slide12.addText([{ text: apiOutput[23], options: { fontSize: 16, breakLine: true } }], {
 			x: 0.7,
 			y: 2.2,
 			w: 8.5,
 			h: 2.5,
-			color: "FFFFFF",
+			color: "000000",
 			valign: "middle",
 			align: "center",
 			isTextBox: true,
