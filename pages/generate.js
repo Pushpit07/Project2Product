@@ -291,6 +291,150 @@ const Home = () => {
 		document.body.removeChild(a);
 		setIsGeneratingPotentialCustomers(false);
 	  }
+
+	  const callLeanStartupEndpoint = async () => {
+		setIsGeneratingLeanStartup(true);
+		console.log("Doing Magic Again...");
+		const response = await fetch('/api/leanstartup', {
+		  method: 'POST',
+		  headers: {
+			'Content-Type': 'application/json',
+		  },
+		  body: JSON.stringify({ userInput }),
+		});
+		const data = await response.json();
+		const { output } = data;
+		let userCusOutputArray = output.text;
+	
+		// Downloading a text file
+		var a = window.document.createElement('a');
+		a.href = window.URL.createObjectURL(new Blob([userCusOutputArray], {type: 'text/plain'}));
+		a.download = 'AdviceFromLeanStartup.txt';
+		document.body.appendChild(a);
+		a.click();
+		document.body.removeChild(a);
+		setIsGeneratingLeanStartup(false);
+	  }
+
+	  const callSPMEEndpoint = async () => {
+		setIsGeneratingSPME(true);
+		console.log("Doing Magic Again...");
+		const response = await fetch('/api/spme', {
+		  method: 'POST',
+		  headers: {
+			'Content-Type': 'application/json',
+		  },
+		  body: JSON.stringify({ userInput }),
+		});
+		const data = await response.json();
+		const { output } = data;
+		let userCusOutputArray = output.text;
+	
+		// Downloading a text file
+		var a = window.document.createElement('a');
+		a.href = window.URL.createObjectURL(new Blob([userCusOutputArray], {type: 'text/plain'}));
+		a.download = 'SPMEforSolopreneurs.txt';
+		document.body.appendChild(a);
+		a.click();
+		document.body.removeChild(a);
+		setIsGeneratingSPME(false);
+	  }
+
+	  const callMVPEndpoint = async () => {
+		setIsGeneratingMVP(true);
+		console.log("Doing Magic Again...");
+		const response = await fetch('/api/mvp', {
+		  method: 'POST',
+		  headers: {
+			'Content-Type': 'application/json',
+		  },
+		  body: JSON.stringify({ userInput }),
+		});
+		const data = await response.json();
+		const { output } = data;
+		let userCusOutputArray = output.text;
+	
+		// Downloading a text file
+		var a = window.document.createElement('a');
+		a.href = window.URL.createObjectURL(new Blob([userCusOutputArray], {type: 'text/plain'}));
+		a.download = 'MVPLaunchChecklist.txt';
+		document.body.appendChild(a);
+		a.click();
+		document.body.removeChild(a);
+		setIsGeneratingMVP(false);
+	  }
+
+	  const callGrantEndpoint = async () => {
+		setIsGeneratingGrant(true);
+		console.log("Doing Magic Again...");
+		const response = await fetch('/api/grant', {
+		  method: 'POST',
+		  headers: {
+			'Content-Type': 'application/json',
+		  },
+		  body: JSON.stringify({ userInput }),
+		});
+		const data = await response.json();
+		const { output } = data;
+		let userCusOutputArray = output.text;
+	
+		// Downloading a text file
+		var a = window.document.createElement('a');
+		a.href = window.URL.createObjectURL(new Blob([userCusOutputArray], {type: 'text/plain'}));
+		a.download = 'GrantProposal.txt';
+		document.body.appendChild(a);
+		a.click();
+		document.body.removeChild(a);
+		setIsGeneratingGrant(false);
+	  }
+
+	  const callTwitterEndpoint = async () => {
+		setIsGeneratingTwitter(true);
+		console.log("Doing Magic Again...");
+		const response = await fetch('/api/twitter', {
+		  method: 'POST',
+		  headers: {
+			'Content-Type': 'application/json',
+		  },
+		  body: JSON.stringify({ userInput }),
+		});
+		const data = await response.json();
+		const { output } = data;
+		let userCusOutputArray = output.text;
+	
+		// Downloading a text file
+		var a = window.document.createElement('a');
+		a.href = window.URL.createObjectURL(new Blob([userCusOutputArray], {type: 'text/plain'}));
+		a.download = 'TwitterStrategy.txt';
+		document.body.appendChild(a);
+		a.click();
+		document.body.removeChild(a);
+		setIsGeneratingTwitter(false);
+	  }
+
+	  const callInstagramEndpoint = async () => {
+		setIsGeneratingInstagram(true);
+		console.log("Doing Magic Again...");
+		const response = await fetch('/api/instagram', {
+		  method: 'POST',
+		  headers: {
+			'Content-Type': 'application/json',
+		  },
+		  body: JSON.stringify({ userInput }),
+		});
+		const data = await response.json();
+		const { output } = data;
+		let userCusOutputArray = output.text;
+	
+		// Downloading a text file
+		var a = window.document.createElement('a');
+		a.href = window.URL.createObjectURL(new Blob([userCusOutputArray], {type: 'text/plain'}));
+		a.download = 'InstagramStrategy.txt';
+		document.body.appendChild(a);
+		a.click();
+		document.body.removeChild(a);
+		setIsGeneratingInstagram(false);
+	  }
 	
 
 	const onUserChangedProductName = (event) => {
